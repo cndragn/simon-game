@@ -58,11 +58,14 @@ $(document).ready(function() {
                 series = [];
                 moves();
                 console.log(series);
-                var next = document.getElementById(series[0]);
 
-                if (next = series[0]) {
-                    //Flash color to show next game play                   
-                    $("#" + series[0]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+
+                for (i = 0; i < series.length; i++) {
+                    var next = document.getElementById(series[i]);
+                    if (next = series[i]) {
+                        //Flash color to show next game play                   
+                        $("#" + series[i]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+                    }
                 }
             }
         }
