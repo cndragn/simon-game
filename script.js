@@ -46,6 +46,10 @@ $(document).ready(function() {
         }
     }
 
+    function flash() {
+
+    }
+
     function start() {
 
 
@@ -54,6 +58,12 @@ $(document).ready(function() {
                 series = [];
                 moves();
                 console.log(series);
+                var next = document.getElementById(series[0]);
+
+                if (next = series[0]) {
+                    //Flash color to show next game play                   
+                    $("#" + series[0]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+                }
             }
         }
     }

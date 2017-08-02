@@ -1,4 +1,4 @@
-.colors .col-sm-3 {
+.colors .col-xs-3 {
 	height: 100px;
 }
 
@@ -13,19 +13,6 @@
 }
 #yellow {
 	background-color: yellow;
-}
-
-#red .lit {
-	background-color: #ef17d4;
-}
-#green .lit {
-	background-color: #ef17d4;
-}
-#blue .lit {
-	background-color: #ef17d4;
-}
-#yellow .lit {
-	background-color: #ef17d4;
 }
 
 .gamebtn button {
