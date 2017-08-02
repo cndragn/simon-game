@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //create random series of button presses
 var blocks = ["red", "green", "blue", "yellow"];
 var play = "";
@@ -28,3 +30,21 @@ function newGame() {
 
 newGame();
 console.log(series.length);
+
+//Power up to start game play
+
+var pow = false;
+
+document.getElementById("power").addEventListener("click", onOff);
+
+function onOff(){
+	if(pow === false){
+		console.log("Im on now!");
+		pow = true;
+	} else if (pow) {
+		console.log("Off now...");
+		pow = false;
+	}
+}
+
+});
