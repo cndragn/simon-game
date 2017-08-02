@@ -11,14 +11,28 @@
 
 <body>
     <div id="header">
-    <h3 class="text-center">Simon Game</h3>
+        <h3 class="text-center">Simon Game</h3>
     </div>
     <div class="container-fluid">
         <div id="game">
-        <div id="red"></div>
-        <div id="green"></div>
-        <div id="blue"></div>
-        <div id="yellow"></div>
+            <div class="row colors">
+                <div class="col-sm-3" id="red"></div>
+                <div class="col-sm-3" id="green"></div>
+                <div class="col-sm-3" id="blue"></div>
+                <div class="col-sm-3" id="yellow"></div>
+            </div>
+            <row>
+                <div class="col-sm-3">Count</div>
+                <div class="col-sm-3">Start</div>
+                <div class="col-sm-3">Strict</div>
+                <div class="col-sm-3">Off / On</div>
+            </row>
+            <row class="gamebtn">
+                <div id="count" class="col-sm-3">#</div>
+                <div class="col-sm-3"><button id="start"></button></div>
+                <div class="col-sm-3"><button id="strict"></button></div>
+                <div class="col-sm-3"><button id="power"></button></div>
+            </row>
         </div>
     </div>
     <footer class="text-center">
