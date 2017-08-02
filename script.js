@@ -40,9 +40,11 @@ document.getElementById("power").addEventListener("click", onOff);
 function onOff(){
 	if(pow === false){
 		console.log("Im on now!");
+		document.getElementById("count").innerHTML = "00";
 		pow = true;
 	} else if (pow) {
 		console.log("Off now...");
+		document.getElementById("count").innerHTML = "";
 		pow = false;
 	}
 }
