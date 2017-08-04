@@ -55,14 +55,14 @@ $(document).ready(function() {
             if (pow === true) {
                 playerSeries = [];
                 moves();
-                console.log(aiSeries);
-                firstMove()                       ;
+                makeMove()                       ;
             }
         }
     }
 
-    function firstMove() {
-        $("#" + aiSeries[0]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+    function makeMove() {
+        console.log(aiSeries);
+        $("#" + aiSeries[counter]).fadeTo(100, 0.1).fadeTo(200, 1.0);
                  document.getElementById("colors").addEventListener("click", player);
     }
 
@@ -74,9 +74,19 @@ $(document).ready(function() {
         console.log(aiSeries[counter]);
         if(playerSeries[counter] === aiSeries[counter]){
             console.log("It's a Match!");
+            counter +=1;
+            document.getElementById("count").innerHTML = counter;
+            if(counter === 20) {
+                console.log("You Win!!!");
+            }
+            makeMove();
         }
         else {
             console.log("Nope!");
+            playerSeries = [];
+            counter = 0;
+            document.getElementById("count").innerHTML = counter;
+            makeMove();
         }
 
     }
