@@ -53,19 +53,32 @@ $(document).ready(function() {
     function start() {
         document.getElementById("start").onclick = function() {
             if (pow === true) {
+                playerSeries = [];
                 moves();
                 console.log(aiSeries);
-                 $("#" + aiSeries[0]).fadeTo(100, 0.1).fadeTo(200, 1.0);
-                 document.getElementById("colors").addEventListener("click", player);             
+                firstMove()                       ;
             }
         }
+    }
+
+    function firstMove() {
+        $("#" + aiSeries[0]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+                 document.getElementById("colors").addEventListener("click", player);
     }
 
     function player(k) {
         var key = k.target.id;
         playerSeries.push(key); 
         console.log(key);    
-        console.log(playerSeries);
+        console.log(playerSeries[counter]);
+        console.log(aiSeries[counter]);
+        if(playerSeries[counter] === aiSeries[counter]){
+            console.log("It's a Match!");
+        }
+        else {
+            console.log("Nope!");
+        }
+
     }
 
 });
