@@ -1,20 +1,23 @@
-.colors .col-xs-3 {
-	height: 100px;
+#colors .col-xs-3 {
+    height: 100px;
 }
 
 #red {
-	background-color: red;
+    background-color: red;
 }
+
 #green {
-	background-color: green;
+    background-color: green;
 }
+
 #blue {
-	background-color: blue;
+    background-color: blue;
 }
+
 #yellow {
-	background-color: yellow;
+    background-color: yellow;
 }
 
 .gamebtn button {
-	padding: 15px;
+    padding: 15px;
 }
