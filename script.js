@@ -75,18 +75,34 @@ $(document).ready(function() {
         }
     }
 
+    var iCount = 0;
 
     function makeMove() {
+        console.log(iCount);
+        console.log(counter);
+        if (iCount <= counter) {
+            setTimeout(function() {
+                console.log(aiSeries);
+                $("#" + aiSeries[iCount]).fadeTo(300, 0.1).fadeTo(500, 1.0);
+                iCount++;
+                makeMove();
+            }, 1000)
+        }
         //console.log(aiSeries);
+
+        /*
         for (i = 0; i <= counter; i++) {
-            $("#" + aiSeries[i]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+            $("#" + aiSeries[i]).fadeTo(300, 0.1).fadeTo(500, 1.0);
             console.log(aiSeries[i]);
 
         }
+        */
         document.getElementById("colors").addEventListener("click", player);
+
     }
 
     function player(k) {
+        iCount = 0;
         var key = k.target.id;
 
         var match = "";
@@ -96,10 +112,10 @@ $(document).ready(function() {
         console.log("Player: " + playerSeries);
         var pLength = playerSeries.length;
         console.log("Player length: " + (pLength -= 1));
-            console.log("Counter: " + counter);
+        console.log("Counter: " + counter);
 
         if ((playerSeries.length - 1) === counter) {
-            
+
             for (i = 0; i <= counter; i++) {
                 if (playerSeries[i] === aiSeries[i]) {
                     match = true
@@ -112,7 +128,7 @@ $(document).ready(function() {
                 }
             }
 
-            
+
             if (match === true) {
                 counter += 1;
                 document.getElementById("count").innerHTML = counter;
@@ -122,7 +138,7 @@ $(document).ready(function() {
                 playerSeries = [];
                 makeMove();
             }
-            
+
             if (match === false) {
                 console.log("Nope!");
                 playerSeries = [];
@@ -134,7 +150,7 @@ $(document).ready(function() {
                 }
                 makeMove();
             }
-            
+
         }
 
     }
