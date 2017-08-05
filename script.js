@@ -133,6 +133,7 @@ $(document).ready(function() {
 
         console.log(key);
         $("#" + key).fadeTo(300, 0.1).fadeTo(500, 1.0);
+        sound(key);
 
         var match = "";
         playerSeries.push(key);
