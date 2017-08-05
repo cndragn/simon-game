@@ -77,41 +77,65 @@ $(document).ready(function() {
 
 
     function makeMove() {
-        console.log(aiSeries);
-        for(i = 0; i <= counter; i++) {
+        //console.log(aiSeries);
+        for (i = 0; i <= counter; i++) {
             $("#" + aiSeries[i]).fadeTo(100, 0.1).fadeTo(200, 1.0);
             console.log(aiSeries[i]);
-        }        
+
+        }
         document.getElementById("colors").addEventListener("click", player);
-        console.log(strMode);
     }
 
     function player(k) {
         var key = k.target.id;
+
+        var match = "";
         playerSeries.push(key);
-        console.log(key);
-        console.log(playerSeries[counter]);
-        console.log(aiSeries[counter]);
-        if (playerSeries[counter] === aiSeries[counter]) {
-            console.log("It's a Match!");
-            counter += 1;
-            document.getElementById("count").innerHTML = counter;
-            if (counter === 20) {
-                console.log("You Win!!!");
+
+        //console.log("Ai: " + aiSeries);
+        console.log("Player: " + playerSeries);
+        var pLength = playerSeries.length;
+        console.log("Player length: " + (pLength -= 1));
+            console.log("Counter: " + counter);
+
+        if ((playerSeries.length - 1) === counter) {
+            
+            for (i = 0; i <= counter; i++) {
+                if (playerSeries[i] === aiSeries[i]) {
+                    match = true
+                    console.log(match);
+                }
+
+                if (playerSeries[i] !== aiSeries[i]) {
+                    match = false;
+                    console.log(match);
+                }
             }
-            makeMove();
-        } else {
-            console.log("Nope!");
-            playerSeries = [];
-            counter = 0;
-            document.getElementById("count").innerHTML = counter;
-            if (strMode === true) {
-                aiSeries = [];
-                moves();
+
+            
+            if (match === true) {
+                counter += 1;
+                document.getElementById("count").innerHTML = counter;
+                if (counter === 20) {
+                    console.log("You Win!!!");
+                }
+                playerSeries = [];
+                makeMove();
             }
-            makeMove();
+            /*
+            if (match === false) {
+                console.log("Nope!");
+                playerSeries = [];
+                counter = 0;
+                document.getElementById("count").innerHTML = counter;
+                if (strMode === true) {
+                    aiSeries = [];
+                    moves();
+                }
+                makeMove();
+            }
+            */
         }
 
     }
-
 });
