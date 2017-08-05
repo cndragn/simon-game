@@ -122,7 +122,7 @@ $(document).ready(function() {
                 playerSeries = [];
                 makeMove();
             }
-            /*
+            
             if (match === false) {
                 console.log("Nope!");
                 playerSeries = [];
@@ -134,7 +134,7 @@ $(document).ready(function() {
                 }
                 makeMove();
             }
-            */
+            
         }
 
     }
