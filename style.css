@@ -10,31 +10,41 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-a, button {
-	outline: none;
+
+a,
+button {
+    outline: none;
 }
 
 .container-fluid {
-	    margin: 100px auto 20px;
+    margin: 100px auto 20px;
 }
+
 .row {
     margin: 0;
     height: 100%;
 }
-#red, #green, #blue, #yellow {
+
+#red,
+#green,
+#blue,
+#yellow {
     height: 50%;
 }
+
 #game {
     width: 500px;
+    max-width: 100%;
     margin: 0 auto;
-    background-color: #e3e4de;
     position: relative;
-    border-radius: 60% 0 60% 0;
 }
+
 #colors {
     border: 8px solid #e1e2dc;
     border-radius: 31% 0 31% 0;
+    background-color: #e3e4de;
 }
+
 #colors .col-xs-6 {
     height: 250px;
 }
@@ -62,26 +72,20 @@ a, button {
     margin: 0;
     border: 1px solid #e4e5dd;
 }
+
 .gamebtn {
     margin: 0 auto;
     width: 200px;
 }
+
 .gamebtn button {
     padding: 15px;
     border-radius: 50%;
     border: 1px solid grey;
 }
 
-.controls {
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    top: 125px;
-    left: 125px;
-    background: #e9eae4;
-    border: 1px solid #c1c1bd;
-    border-radius: 50%;
-}
+
+
 #count {
     background: #686963;
     width: 50px;
@@ -90,18 +94,55 @@ a, button {
     color: white;
     border-radius: 5px;
 }
+
 .active {
-	background-color: #1a8a51;
+    background-color: #1a8a51;
     box-shadow: 0 0 25px #2ecc2e;
 }
-footer, footer a {
-	color: #124639;
-}
+
+footer,
 footer a {
-	text-decoration: underline;
+    color: #124639;
 }
+
+footer a {
+    text-decoration: underline;
+}
+
+@media (min-width: 426px) {
+    .controls {
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 125px;
+        left: 125px;
+        background: #e9eae4;
+        border: 1px solid #c1c1bd;
+        border-radius: 50%;
+    }
+}
+
 @media (max-width: 425px) {
     body {
         background-position: center;
+    }
+    .container-fluid {
+        margin-top: 0;
+    }
+    h1 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    #game {
+        width: 500px;
+    }
+    #colors .col-xs-6 {
+        height: 175px;
+    }
+    #count {
+        margin: 0;
+        position: absolute;
+        top: 385px;
+        left: 75px;
     }
 }
