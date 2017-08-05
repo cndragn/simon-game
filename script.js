@@ -8,6 +8,12 @@ $(document).ready(function() {
     var counter = 0;
     var strMode = false;
 
+    //Sounds
+    var auRed = new Audio("audio/simonSound1.mp3");
+    var auGrn = new Audio("audio/simonSound2.mp3");
+    var auBlu = new Audio("audio/simonSound3.mp3");
+    var auYel = new Audio("audio/simonSound4.mp3");
+
     //Select a random play
     function random() {
         var move = Math.floor((Math.random() * 4));
@@ -77,6 +83,25 @@ $(document).ready(function() {
 
     var iCount = 0;
 
+    function sound(key) {
+        if(key === "red"){
+            auRed.play();
+            console.log("Play Red Sound!");
+        }
+        if(key === "green"){
+            auGrn.play();
+            console.log("Play Green Sound!");
+        }
+        if(key === "blue"){
+            auBlu.play();
+            console.log("Play Blue Sound!");
+        }
+        if(key === "yellow"){
+            auYel.play();
+            console.log("Play Yellow Sound!");
+        }
+    }
+
     function makeMove() {
         console.log(iCount);
         console.log(counter);
@@ -84,6 +109,7 @@ $(document).ready(function() {
             setTimeout(function() {
                 console.log(aiSeries);
                 $("#" + aiSeries[iCount]).fadeTo(300, 0.1).fadeTo(500, 1.0);
+                sound(aiSeries[iCount]);
                 iCount++;
                 makeMove();
             }, 1000)
