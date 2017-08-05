@@ -53,7 +53,7 @@ $(document).ready(function() {
             start();
         } else if (pow) {
             //console.log("Off now...");
-            document.getElementById("count").innerHTML = "";
+            document.getElementById("count").innerHTML = "- -";
             pow = false;
         }
     }

@@ -10,29 +10,78 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+a, button {
+	outline: none;
+}
 
-#colors .col-xs-3 {
-    height: 100px;
+.row {
+    margin: 0;
+}
+
+#game {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #e3e4de;
+    position: relative;
+}
+
+#colors .col-xs-6 {
+    height: 250px;
 }
 
 #red {
-    background-color: red;
+    background-color: #ef393f;
 }
 
 #green {
-    background-color: green;
+    background-color: #1a8a51;
 }
 
 #blue {
-    background-color: blue;
+    background-color: #20698c;
 }
 
 #yellow {
-    background-color: yellow;
+    background-color: #f0ba01;
 }
 
+#colors button {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #e4e5dd;
+}
+.gamebtn {
+    margin: 0 auto;
+    width: 200px;
+}
 .gamebtn button {
     padding: 15px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+.controls {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    background: #e9eae4;
+    border: 1px solid #a7a99e;
+    border-radius: 50%;
+}
+#count {
+    background: #686963;
+    width: 50px;
+    padding: 6px;
+    margin: 25px auto;
+    color: white;
+    border-radius: 5px;
+}
+.active {
+	background-color: #1a8a51;
+    border: 2px solid #2ecc2e;
 }
 
 @media (max-width: 425px) {
