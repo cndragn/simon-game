@@ -78,7 +78,10 @@ $(document).ready(function() {
 
     function makeMove() {
         console.log(aiSeries);
-        $("#" + aiSeries[counter]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+        for(i = 0; i <= counter; i++) {
+            $("#" + aiSeries[i]).fadeTo(100, 0.1).fadeTo(200, 1.0);
+            console.log(aiSeries[i]);
+        }        
         document.getElementById("colors").addEventListener("click", player);
         console.log(strMode);
     }
