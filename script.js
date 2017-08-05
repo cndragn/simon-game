@@ -105,6 +105,9 @@ $(document).ready(function() {
         iCount = 0;
         var key = k.target.id;
 
+        console.log(key);
+        $("#" + key).fadeTo(300, 0.1).fadeTo(500, 1.0);
+
         var match = "";
         playerSeries.push(key);
 
