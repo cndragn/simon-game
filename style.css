@@ -6,8 +6,7 @@ body {
 }
 
 body {
-    background-image: url(images/80s_backgrounds_010.jpg);
-    background-repeat: no-repeat;
+    background: url(images/80s_backgrounds_010.jpg) no-repeat fixed;
     background-size: cover;
 }
 
