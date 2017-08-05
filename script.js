@@ -47,12 +47,12 @@ $(document).ready(function() {
 
     function onOff() {
         if (pow === false) {
-            console.log("Im on now!");
+            //console.log("Im on now!");
             document.getElementById("count").innerHTML = "00";
             pow = true;
             start();
         } else if (pow) {
-            console.log("Off now...");
+            //console.log("Off now...");
             document.getElementById("count").innerHTML = "";
             pow = false;
         }
@@ -109,7 +109,7 @@ $(document).ready(function() {
         //console.log(counter);
         if (iCount <= counter) {
             setTimeout(function() {
-                console.log(aiSeries);
+                //console.log(aiSeries);
                 $("#" + aiSeries[iCount]).fadeTo(300, 0.1).fadeTo(500, 1.0);
                 sound(aiSeries[iCount]);
                 iCount++;
@@ -121,7 +121,7 @@ $(document).ready(function() {
         /*
         for (i = 0; i <= counter; i++) {
             $("#" + aiSeries[i]).fadeTo(300, 0.1).fadeTo(500, 1.0);
-            console.log(aiSeries[i]);
+            //console.log(aiSeries[i]);
 
         }
         */
@@ -149,12 +149,12 @@ $(document).ready(function() {
         for (i = 0; i <= counter; i++) {
                 if (playerSeries[i] === aiSeries[i]) {
                     match = true
-                    console.log(match);
+                    //console.log(match);
                 }
 
                 if (playerSeries[i] !== aiSeries[i]) {
                     match = false;
-                    console.log(match);
+                    //console.log(match);
                 }
             }
 
@@ -165,12 +165,12 @@ $(document).ready(function() {
                 if(counter < 10) {
                     document.getElementById("count").innerHTML = "0" + counter;
                 } else {
-                    console.log(counter);
+                    //console.log(counter);
                 document.getElementById("count").innerHTML = counter;
                 }
                 
                 if (counter === 20) {
-                    console.log("You Win!!!");
+                    //console.log("You Win!!!");
                     auWin.play();                  
                 }
                 playerSeries = [];
@@ -178,7 +178,7 @@ $(document).ready(function() {
             }
 
             if (match === false) {
-                console.log("Nope!");
+                //console.log("Nope!");
                 auLost.play();
                 playerSeries = [];
 
