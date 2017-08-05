@@ -133,7 +133,7 @@ $(document).ready(function() {
         iCount = 0;
         var key = k.target.id;
 
-        console.log(key);
+        //console.log(key);
         $("#" + key).fadeTo(300, 0.1).fadeTo(500, 1.0);
         sound(key);
 
@@ -141,14 +141,12 @@ $(document).ready(function() {
         playerSeries.push(key);
 
         //console.log("Ai: " + aiSeries);
-        console.log("Player: " + playerSeries);
+        //console.log("Player: " + playerSeries);
         var pLength = playerSeries.length;
-        console.log("Player length: " + (pLength -= 1));
-        console.log("Counter: " + counter);
+        //console.log("Player length: " + (pLength -= 1));
+        //console.log("Counter: " + counter);
 
-        if ((playerSeries.length - 1) === counter) {
-
-            for (i = 0; i <= counter; i++) {
+        for (i = 0; i <= counter; i++) {
                 if (playerSeries[i] === aiSeries[i]) {
                     match = true
                     console.log(match);
@@ -160,10 +158,20 @@ $(document).ready(function() {
                 }
             }
 
+        if ((playerSeries.length - 1) === counter) {
+
+            
+
 
             if (match === true) {
                 counter += 1;
+                if(counter < 10) {
+                    document.getElementById("count").innerHTML = "0" + counter;
+                } else {
+                    console.log(counter);
                 document.getElementById("count").innerHTML = counter;
+                }
+                
                 if (counter === 20) {
                     console.log("You Win!!!");
                     auWin.play();
@@ -178,7 +186,7 @@ $(document).ready(function() {
                 auLost.play();
                 playerSeries = [];
                 counter = 0;
-                document.getElementById("count").innerHTML = counter;
+                document.getElementById("count").innerHTML = "00";
                 if (strMode === true) {
                     aiSeries = [];
                     setTimeout(function() { moves(); }, 3000) 
