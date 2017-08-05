@@ -6,8 +6,9 @@ $(document).ready(function() {
     var aiSeries = [];
     var playerSeries = [];
     var counter = 0;
+    var strMode = false;
 
-//Select a random play
+    //Select a random play
     function random() {
         var move = Math.floor((Math.random() * 4));
         if (move === 0) {
@@ -23,7 +24,7 @@ $(document).ready(function() {
             return "yellow";
         }
     }
-//add random play to aiSeries
+    //add random play to aiSeries
     function moves() {
         for (i = 0; i < 20; i++) {
             play = random();
@@ -54,38 +55,57 @@ $(document).ready(function() {
         document.getElementById("start").onclick = function() {
             if (pow === true) {
                 playerSeries = [];
-                moves();
-                makeMove()                       ;
+                if (aiSeries == "") {
+                    moves();
+                }
+                if (strMode === true) {
+                    aiSeries = [];
+                    moves();
+                }
+                makeMove();
             }
         }
     }
+
+    document.getElementById("strict").onclick = function() {
+        if (strMode === true) {
+            strMode = false;;
+        } else if (strMode === false) {
+            strMode = true;
+        }
+    }
+
 
     function makeMove() {
         console.log(aiSeries);
         $("#" + aiSeries[counter]).fadeTo(100, 0.1).fadeTo(200, 1.0);
-                 document.getElementById("colors").addEventListener("click", player);
+        document.getElementById("colors").addEventListener("click", player);
+        console.log(strMode);
     }
 
     function player(k) {
         var key = k.target.id;
-        playerSeries.push(key); 
-        console.log(key);    
+        playerSeries.push(key);
+        console.log(key);
         console.log(playerSeries[counter]);
         console.log(aiSeries[counter]);
-        if(playerSeries[counter] === aiSeries[counter]){
+        if (playerSeries[counter] === aiSeries[counter]) {
             console.log("It's a Match!");
-            counter +=1;
+            counter += 1;
             document.getElementById("count").innerHTML = counter;
-            if(counter === 20) {
+            if (counter === 20) {
                 console.log("You Win!!!");
             }
             makeMove();
-        }
-        else {
+        } else {
             console.log("Nope!");
             playerSeries = [];
             counter = 0;
             document.getElementById("count").innerHTML = counter;
+            if (strMode === true) {
+                aiSeries = [];
+                moves();
+            }
             makeMove();
         }
 
