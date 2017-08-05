@@ -13,6 +13,8 @@ $(document).ready(function() {
     var auGrn = new Audio("audio/simonSound2.mp3");
     var auBlu = new Audio("audio/simonSound3.mp3");
     var auYel = new Audio("audio/simonSound4.mp3");
+    var auWin = new Audio("audio/tada.mp3");
+    var auLost = new Audio("audio/fail.mp3");
 
     //Select a random play
     function random() {
@@ -86,25 +88,25 @@ $(document).ready(function() {
     function sound(key) {
         if(key === "red"){
             auRed.play();
-            console.log("Play Red Sound!");
+            //console.log("Play Red Sound!");
         }
         if(key === "green"){
             auGrn.play();
-            console.log("Play Green Sound!");
+            //console.log("Play Green Sound!");
         }
         if(key === "blue"){
             auBlu.play();
-            console.log("Play Blue Sound!");
+            //console.log("Play Blue Sound!");
         }
         if(key === "yellow"){
             auYel.play();
-            console.log("Play Yellow Sound!");
+            //console.log("Play Yellow Sound!");
         }
     }
 
     function makeMove() {
-        console.log(iCount);
-        console.log(counter);
+        //console.log(iCount);
+        //console.log(counter);
         if (iCount <= counter) {
             setTimeout(function() {
                 console.log(aiSeries);
@@ -164,21 +166,24 @@ $(document).ready(function() {
                 document.getElementById("count").innerHTML = counter;
                 if (counter === 20) {
                     console.log("You Win!!!");
+                    auWin.play();
+                    
                 }
                 playerSeries = [];
-                makeMove();
+               setTimeout(function() { makeMove(); }, 2000) 
             }
 
             if (match === false) {
                 console.log("Nope!");
+                auLost.play();
                 playerSeries = [];
                 counter = 0;
                 document.getElementById("count").innerHTML = counter;
                 if (strMode === true) {
                     aiSeries = [];
-                    moves();
+                    setTimeout(function() { moves(); }, 3000) 
                 }
-                makeMove();
+                setTimeout(function() { makeMove(); }, 3000) 
             }
 
         }
