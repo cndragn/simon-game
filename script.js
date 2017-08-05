@@ -160,9 +160,6 @@ $(document).ready(function() {
 
         if ((playerSeries.length - 1) === counter) {
 
-            
-
-
             if (match === true) {
                 counter += 1;
                 if(counter < 10) {
@@ -174,8 +171,7 @@ $(document).ready(function() {
                 
                 if (counter === 20) {
                     console.log("You Win!!!");
-                    auWin.play();
-                    
+                    auWin.play();                  
                 }
                 playerSeries = [];
                setTimeout(function() { makeMove(); }, 2000) 
@@ -185,8 +181,7 @@ $(document).ready(function() {
                 console.log("Nope!");
                 auLost.play();
                 playerSeries = [];
-                counter = 0;
-                document.getElementById("count").innerHTML = "00";
+
                 if (strMode === true) {
                     aiSeries = [];
                     setTimeout(function() { moves(); }, 3000) 
