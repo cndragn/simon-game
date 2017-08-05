@@ -1,9 +1,9 @@
 # Simon Game
-Simon say...  Touch your nose! Now jump on one leg!!  Oh wait no that's a different Simon game... 
+Simon says...  Touch your nose! Now jump on one leg!!  Oh wait no that's a different Simon game... 
 
 ## Project Details
 
-**View My Project:** http://candicedavidson.com/
+**View My Project:** http://candicedavidson.com/portfolio/simon-game/
 
 ![Simon Game](https://github.com/cndragn/portfolio/blob/master/images/simon.png)
 
