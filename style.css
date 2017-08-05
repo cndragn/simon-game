@@ -14,24 +14,34 @@ a, button {
 	outline: none;
 }
 
+.container-fluid {
+	    margin: 100px auto 20px;
+}
 .row {
     margin: 0;
+    height: 100%;
 }
-
+#red, #green, #blue, #yellow {
+    height: 50%;
+}
 #game {
     width: 500px;
-    height: 500px;
     margin: 0 auto;
     background-color: #e3e4de;
     position: relative;
+    border-radius: 60% 0 60% 0;
 }
-
+#colors {
+    border: 8px solid #e1e2dc;
+    border-radius: 31% 0 31% 0;
+}
 #colors .col-xs-6 {
     height: 250px;
 }
 
 #red {
     background-color: #ef393f;
+    border-radius: 60% 0 0 0;
 }
 
 #green {
@@ -44,6 +54,7 @@ a, button {
 
 #yellow {
     background-color: #f0ba01;
+    border-radius: 0 0 60% 0;
 }
 
 #colors button {
@@ -83,7 +94,12 @@ a, button {
 	background-color: #1a8a51;
     box-shadow: 0 0 25px #2ecc2e;
 }
-
+footer, footer a {
+	color: #124639;
+}
+footer a {
+	text-decoration: underline;
+}
 @media (max-width: 425px) {
     body {
         background-position: center;
